@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Form.css';
 
-const Form = () => {
+const Form = (props) => {
 
     const [cardName, setCardName] = useState("");
     const [cardNum, setCardNum] = useState("");
@@ -9,10 +9,10 @@ const Form = () => {
     const [year, setYear] = useState("");
     const [cvv, setCvv] = useState("");
 
+   
 
     const [error, setError] = useState(false);
 
-    // const [error2, setError2] = useState(false);
 
     function condition(){
         if(cardName.length === 0 || 
@@ -30,14 +30,21 @@ const Form = () => {
     
         e.preventDefault()
         condition();
-        const obj = {
-            cardN:cardName,
-            cardNum:cardNum,
-            month:month,
-            year:year,
-            cvv:cvv
-        }
-        console.log(obj.cardN)
+        props.onSubmit(cardName, cardNum, month, year, cvv)
+        // const obj = {
+        //     cardN:cardName,
+        //     cardNum:cardNum,
+        //     month:month,
+        //     year:year,
+        //     cvv:cvv
+        // }
+        // console.log(obj)
+        // setCardName("");
+        // setCardNum("");
+        // setMonth("");
+        // setYear("");
+        // setCvv("");
+        
     }
 
   return (
@@ -86,19 +93,19 @@ const Form = () => {
                                 setMonth(e.target.value.slice(0,2))
                             }}
                         />
-                        {error && month.length <= 0 ?  <p>Month required</p> : "" }
+                        {/* {error && month.length <= 0 ?  <p>Month required</p> : "" } */}
                         </div>
                         <div>
                         <input 
                             type="number"
                             value={year}
-                            maxLength={4}
+                            maxLength={2}
                             placeholder='YY'
                             onChange={(e) => {
-                                setYear(e.target.value.slice(0,4))
+                                setYear(e.target.value.slice(0,2))
                             }}
                         />
-                        {error && year.length <= 0 ?  <p>Year required</p> : "" }
+                        {/* {error && year.length <= 0 ?  <p>Year required</p> : "" } */}
                         </div>
                     </div>
                 </div>
@@ -108,7 +115,6 @@ const Form = () => {
                     <input 
                         type="type"
                         value={cvv}
-                        maxLength={3}
                         placeholder='e.g 123'
                         onChange={(e) => {
                             setCvv(e.target.value.slice(0,3))
@@ -118,7 +124,7 @@ const Form = () => {
                 </div>
             </div>
             {/* <p>{obj.cardN}</p> */}
-            <button>Confirm</button>
+            <button type='submit'>Confirm</button>
         </form>
     </>
   )

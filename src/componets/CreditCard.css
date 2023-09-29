@@ -1,0 +1,93 @@
+.card-flex{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card-front {
+    width: 415.581px;
+    height: 246.817px;
+    background-image: linear-gradient(221deg, #01b7ff 0%, #8000c1 100% );
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.card-front .card-logo{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.card-logo .circle-fill{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.card-logo .circle-outline{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.credit-card-number div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.credit-card-number span{
+    color: #fff;
+    font-size: 24px;
+}
+
+.w-100{
+    width: 100%;
+}
+.card-front .btm-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-front .btm-name p {
+    font-size: 16px;
+    color: #ffffffd6;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+}
+
+/* CardBackSide */
+.card-back{
+    width: 415.581px;
+    height: 246.817px;
+    border-radius: 1rem;
+    background-color: #D9D9D9;
+    margin-left: 5rem;
+}
+.card-back .black-box{
+    background-color: black;
+    width: 100%;
+    height: 52px;
+    margin-top: 2.5rem;
+}
+.card-back .btm-box{
+    padding: 1rem 2.5rem 2.5rem;
+    text-align: center;
+}
+.card-back .btm-box .gray-box{
+    border-radius: 4px;
+    background-color: #ADB6BF;
+    height: 38px;
+    margin-bottom: 30px;
+    text-align: end;
+    padding: 0.5rem;
+}
+.card-back .btm-box .gray-box p{
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 4px;
+}
